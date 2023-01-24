@@ -1,33 +1,38 @@
 <?php
 
-function Addition ($a, $b){
+function Addition($a, $b)
+{
     return $a + $b;
 }
 
 //echo Addition(2, 4);
 
-function Substraction ($a, $b){
+function Substraction($a, $b)
+{
     return $a - $b;
 }
 
 //echo Substraction(3, 7);
 
-function Multiplication ($a, $b){
+function Multiplication($a, $b)
+{
     return $a * $b;
 }
 
 //echo Multiplication(3, 5);
 
-function Division ($a, $b){
+function Division($a, $b)
+{
     return $a / $b;
 }
 
 //echo Division(5, 4);
 
-function calc($a, $b, $type = ''){
-    switch ($type){
+function calc($a, $b, $type = '')
+{
+    switch ($type) {
         case 'add':
-           return $a + $b;
+            return $a + $b;
             break;
         case 'substract':
             return $a - $b;
@@ -43,12 +48,14 @@ function calc($a, $b, $type = ''){
 }
 
 //echo calc(2, 5);
-function sum($a, $b){
+function sum($a, $b)
+{
     return $a + $b;
 }
 
-function cal ($a, $b, $operation){
-    if(!function_exists($operation)){
+function cal($a, $b, $operation)
+{
+    if (!function_exists($operation)) {
         return "Something went wrong";
     }
     return $operation($a, $b);
@@ -82,11 +89,12 @@ $users = [
 //}
 
 
-function sortArray($array, $option, $order=SORT_ASC): array{
+function sortArray($array, $option, $order = SORT_ASC): array
+{
     $newArr = [];
     $sortableArr = [];
 
-    if(count($array) > 0) {
+    if (count($array) > 0) {
         foreach ($array as $key => $val) {
             if (is_array($val)) {
                 foreach ($val as $vKey => $val2) {
@@ -98,7 +106,7 @@ function sortArray($array, $option, $order=SORT_ASC): array{
                 $sortableArr[$key] = $val;
             }
         }
-        switch ($order){
+        switch ($order) {
             case SORT_ASC:
                 asort($sortableArr);
                 break;
@@ -106,7 +114,7 @@ function sortArray($array, $option, $order=SORT_ASC): array{
                 arsort($sortableArr);
                 break;
         }
-        foreach ($sortableArr as $k => $v){
+        foreach ($sortableArr as $k => $v) {
             $newArr[$k] = $array[$k];
         }
     }
@@ -191,10 +199,57 @@ $i = 0;
 //}
 
 
- while($i<100){
-    $i++;
-     if ($i % 3 == 0){
-         echo $i . '<br>';
-     }
- }
+// while($i<100){
+//    $i++;
+//     if ($i % 3 == 0){
+//         echo $i . '<br>';
+//     }
+// }
+
+//while ($i < 10) {
+//    if ($i == 0) {
+//        echo '<span>' . $i . '</span>' . '-' . '<span>This is null</span>' . '<br>';
+//    } elseif ($i % 2 == 0) {
+//        echo '<span>' . $i . '</span>' . '-' . '<span>This is even number</span>' . '<br>';
+//    } else {
+//        echo '<span>' . $i . '</span>' . '-' . '<span>This is odd number</span>' . '<br>';
+//    }
+//    $i++;
+//}
+
+$regions = [
+    'Andijon Viloyati' => [
+        "Andijon",
+        "Asaka",
+        "Baliqchi",
+        "Paxtaobod",
+        "Xo'jaobod"
+    ],
+    'Toshkent Viloyati' => [
+        "Yunusobod",
+        "Chilonzor",
+        "Toshkent",
+        "Eski Shahar",
+        "Mirobod"
+    ]
+];
+
+//foreach ($regions as $key => $region) {
+//    echo "$key:" . '<br>';
+//    echo implode(',  ', $region) . '<br>';
+//}
+//
+//
+//$str = "apple banana";
+//
+//echo str_replace(' ', '', $str);
+//
+//for ($i = 0; $i < 10; $i++) echo $i;
+
+//include '../new/test.php';
+
+/*'<h1><?$Hello ?></h1>';*/   // it doesnt work with descendant files
+
+include dirname(__DIR__) . '/new/test.php';  // even there is an error it doesnt affect to your code
+//require dirname(__DIR__) . '/new/test.php';  // it affects and never shows your codes in browser
 
